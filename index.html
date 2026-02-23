@@ -6,7 +6,7 @@
     <meta name="description" content="Skin and Smiles Dental Clinic offers modern dental and skin care treatments in one trusted clinic.">
     <meta name="keywords" content="dental clinic, skin clinic, whitening, braces, facial, laser treatment">
     <meta name="author" content="Skin and Smiles Dental Clinic">
-    <title>Skin and Smiles Dental Clinc</title>
+    <title>Skin and Smiles Dental Clinic</title>
     <style>
         :root {
             --bg: #f8f9f4;
@@ -36,6 +36,7 @@
             line-height: 1.5;
             position: relative;
             overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
         }
 
         body::before {
@@ -150,6 +151,12 @@
             padding: 12px 18px;
             font-weight: 700;
             border: 1px solid transparent;
+            transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, color 0.24s ease, border-color 0.24s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(15, 31, 29, 0.12);
         }
 
         .btn-primary {
@@ -165,6 +172,15 @@
             border-color: var(--line);
             color: var(--text);
             background: #fff;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1faf54;
         }
 
         .hero-card {
@@ -229,6 +245,12 @@
             border-radius: 14px;
             padding: 18px;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
         }
 
         .card h3 {
@@ -298,6 +320,12 @@
             border-radius: 14px;
             border: 1px solid var(--line);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.11);
         }
 
         .about {
@@ -352,6 +380,12 @@
             border: 1px solid #f0dcc1;
             border-radius: 14px;
             padding: 16px;
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .quote:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(94, 76, 36, 0.12);
         }
 
         .quote p {
@@ -399,11 +433,127 @@
             padding: 8px 14px;
             font-weight: 700;
             font-size: 0.9rem;
+            transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease;
         }
 
         .social-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .social-btn.whatsapp {
+            border-color: #25d366;
+            color: #138a42;
+        }
+
+        .social-btn.whatsapp:hover {
+            border-color: #25d366;
+            color: #0f6f35;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1,
+        .hero .lead,
+        .hero-actions .btn,
+        .hero-card,
+        .section-title,
+        .cards .card,
+        .gallery img,
+        .quote,
+        .contact-card {
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .hero h1 {
+            animation-delay: 0.04s;
+        }
+
+        .hero .lead {
+            animation-delay: 0.12s;
+        }
+
+        .hero-actions .btn:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .hero-actions .btn:nth-child(2) {
+            animation-delay: 0.28s;
+        }
+
+        .hero-actions .btn:nth-child(3) {
+            animation-delay: 0.36s;
+        }
+
+        .hero-card {
+            animation-delay: 0.26s;
+        }
+
+        .cards .card:nth-child(1),
+        .gallery img:nth-child(1),
+        .quote:nth-child(1) {
+            animation-delay: 0.08s;
+        }
+
+        .cards .card:nth-child(2),
+        .gallery img:nth-child(2),
+        .quote:nth-child(2) {
+            animation-delay: 0.16s;
+        }
+
+        .cards .card:nth-child(3),
+        .gallery img:nth-child(3) {
+            animation-delay: 0.24s;
+        }
+
+        .cards .card:nth-child(4) {
+            animation-delay: 0.32s;
+        }
+
+        .cards .card:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .cards .card:nth-child(6) {
+            animation-delay: 0.48s;
+        }
+
+        .contact-card {
+            animation-delay: 0.14s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .hero h1,
+            .hero .lead,
+            .hero-actions .btn,
+            .hero-card,
+            .section-title,
+            .cards .card,
+            .gallery img,
+            .quote,
+            .contact-card {
+                opacity: 1;
+            }
+        }
+
+        .mobile-quick-actions {
+            display: none;
         }
 
         footer {
@@ -416,6 +566,65 @@
         }
 
         @media (max-width: 960px) {
+            body {
+                padding-bottom: 88px;
+            }
+
+            .container {
+                width: min(1120px, 94%);
+            }
+
+            header {
+                position: static;
+            }
+
+            .nav-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                margin-left: 0;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                background: #fff;
+                padding: 8px 12px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+
+            .hero {
+                padding: 42px 0 28px;
+            }
+
+            .hero-photo {
+                height: 170px;
+            }
+
+            .btn {
+                min-height: 46px;
+                text-align: center;
+            }
+
             .hero-grid,
             .cards,
             .gallery,
@@ -425,9 +634,63 @@
                 grid-template-columns: 1fr;
             }
 
-            nav a {
-                margin-left: 10px;
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                text-align: center;
+            }
+
+            .mobile-quick-actions {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+                padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+                border-top: 1px solid var(--line);
+                background: rgba(248, 249, 244, 0.96);
+                backdrop-filter: blur(8px);
+                z-index: 30;
+            }
+
+            .mobile-quick-actions a {
+                text-decoration: none;
+                text-align: center;
+                font-weight: 700;
+                color: var(--text);
+                background: #fff;
+                border: 1px solid var(--line);
+                border-radius: 10px;
+                padding: 10px 8px;
                 font-size: 0.9rem;
+            }
+
+            .mobile-quick-actions .primary {
+                color: #fff;
+                background: var(--accent);
+                border-color: var(--accent);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .gallery img {
+                height: 180px;
             }
         }
     </style>
@@ -437,7 +700,7 @@
         <div class="container nav-wrap">
             <div class="brand">
                 <span class="brand-badge">S+</span>
-                <span>Skin and Smiles Dental Clinc</span>
+                <span>Skin and Smiles Dental Clinic</span>
             </div>
             <nav>
                 <a href="#home">Home</a>
@@ -454,8 +717,10 @@
                 <div>
                     <span class="eyebrow">Dental + Skin Care in One Place</span>
                     <h1>Healthy skin. Confident smile. Expert care for every visit.</h1>
-                    <p class="lead">Skin and Smiles Dental Clinc combines advanced dental treatment and personalized skin care so you can look and feel your best in one trusted clinic.</p>
+                    <p class="lead">Skin and Smiles Dental Clinic combines advanced dental treatment and personalized skin care so you can look and feel your best in one trusted clinic.</p>
                     <div class="hero-actions">
+                        <a class="btn btn-primary" href="tel:+971564233443">Call Now</a>
+                        <a class="btn btn-whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
                         <a class="btn btn-secondary" href="#services">View Services</a>
                     </div>
                 </div>
@@ -613,6 +878,7 @@
                         <p><strong>Email:</strong> skinandsmiledentalclinic@gmail.com</p>
                         <p><strong>Follow Us:</strong></p>
                         <div class="social-links">
+                            <a class="social-btn whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
                             <a class="social-btn" href="https://www.facebook.com/profile.php?id=61550576527032" target="_blank" rel="noopener noreferrer">Facebook</a>
                             <a class="social-btn" href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </div>
@@ -622,8 +888,19 @@
         </section>
     </main>
 
+    <div class="mobile-quick-actions" aria-label="Quick mobile actions">
+        <a class="primary" href="tel:+971564233443">Call</a>
+        <a href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+
     <footer>
-        Skin and Smiles Dental Clinc. All rights reserved.
+        Skin and Smiles Dental Clinic. All rights reserved. <span id="year"></span>
     </footer>
+    <script>
+        document.getElementById("year").textContent = "| " + new Date().getFullYear();
+    </script>
 </body>
 </html>
+
+
