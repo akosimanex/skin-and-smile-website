@@ -3,848 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Skin and Smiles Dental Clinic offers modern dental and skin care treatments in one trusted clinic.">
+    <meta name="description" content="Skin and Smile Dental Clinic offers modern dental and skin care treatments in one trusted clinic.">
     <meta name="keywords" content="dental clinic, skin clinic, whitening, braces, facial, laser treatment">
-    <meta name="author" content="Skin and Smiles Dental Clinic">
-    <title>Skin and Smiles Dental Clinic</title>
-    <style>
-        :root {
-            --bg: #f8f9f4;
-            --surface: #ffffff;
-            --text: #1c2a2a;
-            --muted: #526162;
-            --accent: #0b8f86;
-            --accent-2: #f4b45f;
-            --line: #dce5e2;
-            --shadow: 0 12px 28px rgba(15, 31, 29, 0.08);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at 12% 18%, rgba(11, 143, 134, 0.12) 0%, rgba(11, 143, 134, 0) 36%),
-                radial-gradient(circle at 86% 14%, rgba(244, 180, 95, 0.2) 0%, rgba(244, 180, 95, 0) 33%),
-                radial-gradient(circle at 76% 78%, rgba(70, 176, 168, 0.12) 0%, rgba(70, 176, 168, 0) 34%),
-                linear-gradient(160deg, #f6fcfa 0%, #f8f9f4 52%, #f8f2e6 100%);
-            color: var(--text);
-            line-height: 1.5;
-            position: relative;
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(11, 143, 134, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(11, 143, 134, 0.05) 1px, transparent 1px);
-            background-size: 36px 36px;
-            mask-image: radial-gradient(circle at center, #000 35%, transparent 100%);
-            z-index: -1;
-        }
-
-        .container {
-            width: min(1120px, 92%);
-            margin: 0 auto;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            backdrop-filter: blur(8px);
-            background: rgba(248, 249, 244, 0.92);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .nav-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 0;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        .brand-badge {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-size: 1rem;
-            background: linear-gradient(130deg, var(--accent), #46b0a8);
-            box-shadow: var(--shadow);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            margin-left: 18px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .hero {
-            padding: 76px 0 58px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            background: #d8f0ed;
-            color: #0a6e67;
-            border: 1px solid #b5dfda;
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            margin-top: 14px;
-            line-height: 1.12;
-        }
-
-        .lead {
-            margin-top: 14px;
-            color: var(--muted);
-            font-size: 1.05rem;
-            max-width: 58ch;
-        }
-
-        .hero-actions {
-            margin-top: 28px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 10px;
-            padding: 12px 18px;
-            font-weight: 700;
-            border: 1px solid transparent;
-            transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, color 0.24s ease, border-color 0.24s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(15, 31, 29, 0.12);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: #0a756d;
-        }
-
-        .btn-secondary {
-            border-color: var(--line);
-            color: var(--text);
-            background: #fff;
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: #fff;
-        }
-
-        .btn-whatsapp:hover {
-            background: #1faf54;
-        }
-
-        .hero-card {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 22px;
-            box-shadow: var(--shadow);
-        }
-
-        .hero-photo {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 14px;
-            border: 1px solid var(--line);
-        }
-
-        .hero-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .hero-list {
-            list-style: none;
-        }
-
-        .hero-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--line);
-            color: #2f3e3e;
-        }
-
-        .hero-list li:last-child {
-            border-bottom: none;
-        }
-
-        section {
-            padding: 40px 0;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        .section-sub {
-            color: var(--muted);
-            max-width: 64ch;
-            margin-bottom: 22px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 18px;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
-            transition: transform 0.24s ease, box-shadow 0.24s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
-        }
-
-        .card h3 {
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .service-card details {
-            width: 100%;
-        }
-
-        .service-card summary {
-            list-style: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text);
-            padding-right: 24px;
-            position: relative;
-        }
-
-        .service-card summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .service-card summary::after {
-            content: "+";
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: var(--accent);
-            font-size: 1.2rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .service-card details[open] summary::after {
-            content: "-";
-        }
-
-        .service-list {
-            margin-top: 10px;
-            padding-left: 18px;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .service-list li {
-            margin-bottom: 8px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 14px;
-            border: 1px solid var(--line);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.11);
-        }
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .about-panel {
-            background: var(--surface);
-            border-radius: 16px;
-            border: 1px solid var(--line);
-            padding: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-panel ul {
-            margin-top: 10px;
-            padding-left: 18px;
-            color: var(--muted);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .stat {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 16px;
-            text-align: center;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .quote {
-            background: #fffaf2;
-            border: 1px solid #f0dcc1;
-            border-radius: 14px;
-            padding: 16px;
-            transition: transform 0.24s ease, box-shadow 0.24s ease;
-        }
-
-        .quote:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(94, 76, 36, 0.12);
-        }
-
-        .quote p {
-            color: #4f4a3f;
-        }
-
-        .quote small {
-            display: block;
-            margin-top: 10px;
-            color: #7a6f5c;
-            font-weight: 700;
-        }
-
-        .contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .contact-card {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 18px;
-        }
-
-        .contact-card p {
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        .social-btn {
-            text-decoration: none;
-            background: #ffffff;
-            border: 1px solid var(--line);
-            color: var(--text);
-            border-radius: 999px;
-            padding: 8px 14px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease;
-        }
-
-        .social-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .social-btn.whatsapp {
-            border-color: #25d366;
-            color: #138a42;
-        }
-
-        .social-btn.whatsapp:hover {
-            border-color: #25d366;
-            color: #0f6f35;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1,
-        .hero .lead,
-        .hero-actions .btn,
-        .hero-card,
-        .section-title,
-        .cards .card,
-        .gallery img,
-        .quote,
-        .contact-card {
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards;
-        }
-
-        .hero h1 {
-            animation-delay: 0.04s;
-        }
-
-        .hero .lead {
-            animation-delay: 0.12s;
-        }
-
-        .hero-actions .btn:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .hero-actions .btn:nth-child(2) {
-            animation-delay: 0.28s;
-        }
-
-        .hero-actions .btn:nth-child(3) {
-            animation-delay: 0.36s;
-        }
-
-        .hero-card {
-            animation-delay: 0.26s;
-        }
-
-        .cards .card:nth-child(1),
-        .gallery img:nth-child(1),
-        .quote:nth-child(1) {
-            animation-delay: 0.08s;
-        }
-
-        .cards .card:nth-child(2),
-        .gallery img:nth-child(2),
-        .quote:nth-child(2) {
-            animation-delay: 0.16s;
-        }
-
-        .cards .card:nth-child(3),
-        .gallery img:nth-child(3) {
-            animation-delay: 0.24s;
-        }
-
-        .cards .card:nth-child(4) {
-            animation-delay: 0.32s;
-        }
-
-        .cards .card:nth-child(5) {
-            animation-delay: 0.4s;
-        }
-
-        .cards .card:nth-child(6) {
-            animation-delay: 0.48s;
-        }
-
-        .contact-card {
-            animation-delay: 0.14s;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-
-            .hero h1,
-            .hero .lead,
-            .hero-actions .btn,
-            .hero-card,
-            .section-title,
-            .cards .card,
-            .gallery img,
-            .quote,
-            .contact-card {
-                opacity: 1;
-            }
-        }
-
-        .mobile-quick-actions {
-            display: none;
-        }
-
-        footer {
-            border-top: 1px solid var(--line);
-            margin-top: 24px;
-            padding: 20px 0 28px;
-            color: var(--muted);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 960px) {
-            body {
-                padding-bottom: 88px;
-            }
-
-            .container {
-                width: min(1120px, 94%);
-            }
-
-            header {
-                position: static;
-            }
-
-            .nav-wrap {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            nav {
-                display: flex;
-                gap: 10px;
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 4px;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            nav::-webkit-scrollbar {
-                display: none;
-            }
-
-            nav a {
-                margin-left: 0;
-                font-size: 0.9rem;
-                white-space: nowrap;
-                border: 1px solid var(--line);
-                border-radius: 999px;
-                background: #fff;
-                padding: 8px 12px;
-            }
-
-            section {
-                padding: 30px 0;
-            }
-
-            .hero {
-                padding: 42px 0 28px;
-            }
-
-            .hero-photo {
-                height: 170px;
-            }
-
-            .btn {
-                min-height: 46px;
-                text-align: center;
-            }
-
-            .hero-grid,
-            .cards,
-            .gallery,
-            .about,
-            .testimonials,
-            .contact {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .social-links {
-                flex-direction: column;
-            }
-
-            .social-btn {
-                text-align: center;
-            }
-
-            .mobile-quick-actions {
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 8px;
-                padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-                border-top: 1px solid var(--line);
-                background: rgba(248, 249, 244, 0.96);
-                backdrop-filter: blur(8px);
-                z-index: 30;
-            }
-
-            .mobile-quick-actions a {
-                text-decoration: none;
-                text-align: center;
-                font-weight: 700;
-                color: var(--text);
-                background: #fff;
-                border: 1px solid var(--line);
-                border-radius: 10px;
-                padding: 10px 8px;
-                font-size: 0.9rem;
-            }
-
-            .mobile-quick-actions .primary {
-                color: #fff;
-                background: var(--accent);
-                border-color: var(--accent);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .hero-actions .btn {
-                width: 100%;
-            }
-
-            .gallery img {
-                height: 180px;
-            }
-        }
-    </style>
+    <meta name="author" content="Skin and Smile Dental Clinic">
+    <title>Skin and Smile Dental Clinic</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- ===== HEADER ===== -->
+    <!-- Contains logo, navigation, and language selector -->
     <header>
         <div class="container nav-wrap">
             <div class="brand">
-                <span class="brand-badge">S+</span>
-                <span>Skin and Smiles Dental Clinic</span>
+                <img class="brand-logo" src="clinic-logo.jpg" alt="Skin and Smile Dental Clinic logo">
+                <span data-i18n="brand">Skin and Smile Dental Clinic</span>
             </div>
             <nav>
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" data-i18n="navHome">Home</a>
+                <a href="#services" data-i18n="navServices">Services</a>
+                <a href="#about" data-i18n="navAbout">About</a>
+                <a href="#contact" data-i18n="navContact">Contact</a>
             </nav>
+            <select class="lang-switch" id="languageSelect" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
         </div>
     </header>
 
+    <!-- ===== MAIN PAGE CONTENT ===== -->
     <main id="home">
+        <!-- HERO -->
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <span class="eyebrow">Dental + Skin Care in One Place</span>
-                    <h1>Healthy skin. Confident smile. Expert care for every visit.</h1>
-                    <p class="lead">Skin and Smiles Dental Clinic combines advanced dental treatment and personalized skin care so you can look and feel your best in one trusted clinic.</p>
+                    <span class="eyebrow" data-i18n="heroEyebrow">Dental + Skin Care in One Place</span>
+                    <h1 data-i18n="heroTitle">Healthy skin. Confident smile. Expert care for every visit.</h1>
+                    <p class="lead" data-i18n="heroLead">Skin and Smile Dental Clinic combines advanced dental treatment and personalized skin care so you can look and feel your best in one trusted clinic.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="tel:+971564233443">Call Now</a>
-                        <a class="btn btn-whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                        <a class="btn btn-secondary" href="#services">View Services</a>
+                        <a class="btn btn-primary" href="tel:+971564233443" data-i18n="callNow">Call Now</a>
+                        <a class="btn btn-secondary" href="#services" data-i18n="viewServices">View Services</a>
                     </div>
                 </div>
                 <aside class="hero-card">
                     <img class="hero-photo" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Modern dental clinic interior">
-                    <h3>Clinic Hours</h3>
+                    <h3 data-i18n="clinicHoursTitle">Clinic Hours</h3>
                     <ul class="hero-list">
-                        <li>Monday - Friday: 9:00 AM - 7:00 PM</li>
-                        <li>Saturday: 9:00 AM - 4:00 PM</li>
-                        <li>Sunday: Closed</li>
-                        <li>Same-day consults available</li>
+                        <li data-i18n="hours1">Monday - Thursday & Saturday - Sunday: 7:00 AM - 10:00 PM</li>
+                        <li data-i18n="hours2">Friday: 1:00 PM - 10:00 PM</li>
+                        <li data-i18n="hours3">Same-day consults available</li>
                     </ul>
                 </aside>
             </div>
         </section>
 
+        <!-- SERVICES -->
+        <!-- Each card links to a separate page inside /services -->
         <section id="services">
             <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-sub">Comprehensive care using modern technology, sterile protocols, and a patient-first approach.</p>
+                <h2 class="section-title" data-i18n="servicesTitle">Our Services</h2>
+                <p class="section-sub" data-i18n="servicesSub">Comprehensive care using modern technology, sterile protocols, and a patient-first approach.</p>
                 <div class="cards">
                     <article class="card service-card">
-                        <details>
-                            <summary>General Dentistry</summary>
-                            <ul class="service-list">
-                                <li><strong>Tooth Cleaning:</strong> Cleans teeth using advanced products tested worldwide.</li>
-                                <li><strong>Dental Fillings:</strong> Repairs cavities and protects the tooth from further decay.</li>
-                                <li><strong>Oral Checkup:</strong> Early detection of gum and tooth problems before they worsen.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="generalDentistry">General Dentistry</h3>
+                            <p class="service-desc" data-i18n="generalDesc">Routine checkups, deep cleaning, and cavity care to keep your smile healthy.</p>
+                        </div>
+                        <a class="service-link" href="services/general-dentistry.html" data-i18n="learnMore">Learn More</a>
                     </article>
                     <article class="card service-card">
-                        <details>
-                            <summary>Cosmetic Dentistry</summary>
-                            <ul class="service-list">
-                                <li><strong>Teeth Whitening:</strong> Brightens stained teeth for a cleaner, whiter smile.</li>
-                                <li><strong>Veneers:</strong> Covers chipped or uneven teeth for a smooth appearance.</li>
-                                <li><strong>Smile Design:</strong> Creates a custom treatment plan based on facial features.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="cosmeticDentistry">Cosmetic Dentistry</h3>
+                            <p class="service-desc" data-i18n="cosmeticDesc">Whitening, veneers, and smile design to improve aesthetics and confidence.</p>
+                        </div>
+                        <a class="service-link" href="services/cosmetic-dentistry.html" data-i18n="learnMore">Learn More</a>
                     </article>
                     <article class="card service-card">
-                        <details>
-                            <summary>Orthodontics</summary>
-                            <ul class="service-list">
-                                <li><strong>Metal Braces:</strong> Straightens teeth and corrects bite alignment over time.</li>
-                                <li><strong>Clear Aligners:</strong> Transparent trays that gradually move teeth with comfort.</li>
-                                <li><strong>Bite Correction:</strong> Improves chewing and jaw balance for long-term oral health.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="orthodontics">Orthodontics</h3>
+                            <p class="service-desc" data-i18n="orthoDesc">Braces and clear aligners to align teeth and improve bite function.</p>
+                        </div>
+                        <a class="service-link" href="services/orthodontics.html" data-i18n="learnMore">Learn More</a>
                     </article>
                     <article class="card service-card">
-                        <details>
-                            <summary>Facial Treatments</summary>
-                            <ul class="service-list">
-                                <li><strong>Hydra Facial:</strong> Deep-cleans pores while hydrating and soothing the skin.</li>
-                                <li><strong>Acne Care:</strong> Controls breakouts and reduces marks with guided treatment.</li>
-                                <li><strong>Skin Rejuvenation:</strong> Improves tone, texture, and glow with clinical methods.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="facialTreatments">Facial Treatments</h3>
+                            <p class="service-desc" data-i18n="facialDesc">Hydra facial, acne programs, and rejuvenation for healthier skin.</p>
+                        </div>
+                        <a class="service-link" href="services/facial-treatments.html" data-i18n="learnMore">Learn More</a>
                     </article>
                     <article class="card service-card">
-                        <details>
-                            <summary>Laser Procedures</summary>
-                            <ul class="service-list">
-                                <li><strong>Pigmentation Laser:</strong> Helps fade dark spots and uneven skin tone.</li>
-                                <li><strong>Scar Reduction:</strong> Smooths acne scars and improves skin texture.</li>
-                                <li><strong>Hair Reduction:</strong> Targets hair follicles for long-term hair control.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="laserProcedures">Laser Procedures</h3>
+                            <p class="service-desc" data-i18n="laserDesc">Advanced laser solutions for pigmentation, scars, and hair reduction.</p>
+                        </div>
+                        <a class="service-link" href="services/laser-procedures.html" data-i18n="learnMore">Learn More</a>
                     </article>
                     <article class="card service-card">
-                        <details>
-                            <summary>Skin Consultation</summary>
-                            <ul class="service-list">
-                                <li><strong>Skin Analysis:</strong> Identifies your skin type, concerns, and treatment goals.</li>
-                                <li><strong>Routine Planning:</strong> Creates a daily care routine suited to your skin.</li>
-                                <li><strong>Progress Review:</strong> Tracks improvements and adjusts treatment as needed.</li>
-                            </ul>
-                        </details>
+                        <div>
+                            <h3 data-i18n="skinConsultation">Skin Consultation</h3>
+                            <p class="service-desc" data-i18n="consultDesc">Personalized skin analysis and treatment planning with progress reviews.</p>
+                        </div>
+                        <a class="service-link" href="services/skin-consultation.html" data-i18n="learnMore">Learn More</a>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- GALLERY -->
         <section>
             <div class="container">
-                <h2 class="section-title">Clinic Gallery</h2>
-                <p class="section-sub">A quick look at our clean, modern, and patient-friendly clinic environment.</p>
+                <h2 class="section-title" data-i18n="galleryTitle">Clinic Gallery</h2>
+                <p class="section-sub" data-i18n="gallerySub">A quick look at our clean, modern, and patient-friendly clinic environment.</p>
                 <div class="gallery">
-                    <img src="https://images.unsplash.com/photo-1588776814546-ec7e94c9f5b8?auto=format&fit=crop&w=900&q=80" alt="Dentist and patient during consultation">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" alt="Dentist and patient during consultation">
                     <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=900&q=80" alt="Skincare treatment in clinic room">
                     <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=80" alt="Dental treatment setup with modern tools">
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about">
             <div class="container">
-                <h2 class="section-title">Why Patients Choose Us</h2>
+                <h2 class="section-title" data-i18n="aboutTitle">Why Patients Choose Us</h2>
                 <div class="about">
                     <div class="about-panel">
-                        <p>Our clinic brings dental and dermatology professionals together for efficient, complete care under one roof.</p>
+                        <p data-i18n="aboutLead">Our clinic brings dental and dermatology professionals together for efficient, complete care under one roof.</p>
                         <ul>
-                            <li>Licensed and experienced dentists and skin specialists</li>
-                            <li>Strict sterilization and safety standards</li>
-                            <li>Friendly team and transparent treatment plans</li>
-                            <li>Comfort-first treatment rooms and modern equipment</li>
+                            <li data-i18n="aboutPoint1">Licensed and experienced dentists and skin specialists</li>
+                            <li data-i18n="aboutPoint2">Strict sterilization and safety standards</li>
+                            <li data-i18n="aboutPoint3">Friendly team and transparent treatment plans</li>
+                            <li data-i18n="aboutPoint4">Comfort-first treatment rooms and modern equipment</li>
                         </ul>
                     </div>
                     <div class="about-panel">
-                        <h3>Clinic Snapshot</h3>
+                        <h3 data-i18n="snapshotTitle">Clinic Snapshot</h3>
                         <div class="stats">
                             <div class="stat">
                                 <strong>8+</strong>
-                                Years of Service
+                                <span data-i18n="yearsService">Years of Service</span>
                             </div>
                             <div class="stat">
                                 <strong>6k+</strong>
-                                Happy Patients
+                                <span data-i18n="happyPatients">Happy Patients</span>
                             </div>
                             <div class="stat">
-                                <strong>4.9/5</strong>
-                                Average Rating
+                                <strong>4.5/5</strong>
+                                <span data-i18n="avgRating">Average Rating</span>
                             </div>
                         </div>
                     </div>
@@ -852,55 +158,275 @@
             </div>
         </section>
 
+        <!-- TESTIMONIALS -->
         <section>
             <div class="container">
-                <h2 class="section-title">Patient Feedback</h2>
+                <h2 class="section-title" data-i18n="feedbackTitle">Patient Feedback</h2>
                 <div class="testimonials">
                     <article class="quote">
-                        <p>"My braces and skin treatment were both handled so smoothly. The team is kind and professional."</p>
+                        <p data-i18n="quote1">"My braces and skin treatment were both handled so smoothly. The team is kind and professional."</p>
                         <small>- Angela R.</small>
                     </article>
                     <article class="quote">
-                        <p>"I love the results of my whitening and acne care package. Very clean clinic and friendly staff."</p>
+                        <p data-i18n="quote2">"I love the results of my whitening and acne care package. Very clean clinic and friendly staff."</p>
                         <small>- Mark T.</small>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact">
             <div class="container">
-                <h2 class="section-title">Contact Us</h2>
+                <h2 class="section-title" data-i18n="contactTitle">Contact Us</h2>
                 <div class="contact">
                     <div class="contact-card">
-                        <p><strong>Address:</strong> Al Satwa, Dubai UAE</p>
-                        <p><strong>Phone:</strong> +971 56 423 3443</p>
-                        <p><strong>Email:</strong> skinandsmiledentalclinic@gmail.com</p>
-                        <p><strong>Follow Us:</strong></p>
+                        <p data-i18n="addressLine"><strong>Address:</strong> Al Satwa, Dubai UAE</p>
+                        <p data-i18n="phoneLine"><strong>Phone:</strong> +971 56 423 3443</p>
+                        <p data-i18n="emailLine"><strong>Email:</strong> skinandsmiledentalclinic@gmail.com</p>
+                        <p data-i18n="followUs"><strong>Follow Us:</strong></p>
                         <div class="social-links">
-                            <a class="social-btn whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                            <a class="social-btn" href="https://www.facebook.com/profile.php?id=61550576527032" target="_blank" rel="noopener noreferrer">Facebook</a>
-                            <a class="social-btn" href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a class="social-btn whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp">
+                            </a>
+                            <a class="social-btn" href="https://www.facebook.com/profile.php?id=61550576527032" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook">
+                            </a>
+                            <a class="social-btn" href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+                            </a>
                         </div>
+                    </div>
+                    <div class="contact-card">
+                        <p data-i18n="mapTitle"><strong>Our Location:</strong></p>
+                        <p data-i18n="mapHint">Use the map below to get directions to the clinic.</p>
+                        <a class="btn btn-secondary" href="https://maps.google.com/?q=Al+Satwa,+Dubai,+UAE" target="_blank" rel="noopener noreferrer" data-i18n="openMap">Open in Google Maps</a>
+                        <iframe
+                            class="map-frame"
+                            title="Clinic location map"
+                            src="https://maps.google.com/maps?q=Al%20Satwa%2C%20Dubai%2C%20UAE&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Floating quick action buttons for mobile users -->
     <div class="mobile-quick-actions" aria-label="Quick mobile actions">
-        <a class="primary" href="tel:+971564233443">Call</a>
-        <a href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="primary" href="tel:+971564233443" data-i18n="mobileCall">Call</a>
+        <a class="whatsapp" href="https://wa.me/971564233443?text=Hi%20Skin%20and%20Smiles%20Dental%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.instagram.com/skinandsmiledentalclinic/" target="_blank" rel="noopener noreferrer" data-i18n="mobileInstagram">Instagram</a>
     </div>
 
+    <!-- FOOTER -->
     <footer>
-        Skin and Smiles Dental Clinic. All rights reserved. <span id="year"></span>
+        <span data-i18n="footerText">Skin and Smiles Dental Clinic. All rights reserved.</span> <span id="year"></span>
     </footer>
     <script>
+        // ===== LANGUAGE SYSTEM =====
+        // Edit text here if you want to change wording in English/Arabic.
+        const translations = {
+            en: {
+                pageTitle: "Skin and Smile Dental Clinic",
+                pageDescription: "Skin and Smile Dental Clinic offers modern dental and skin care treatments in one trusted clinic.",
+                brand: "Skin and Smile Dental Clinic",
+                navHome: "Home",
+                navServices: "Services",
+                navAbout: "About",
+                navContact: "Contact",
+                heroEyebrow: "Dental + Skin Care in One Place",
+                heroTitle: "Healthy skin. Confident smile. Expert care for every visit.",
+                heroLead: "Skin and Smile Dental Clinic combines advanced dental treatment and personalized skin care so you can look and feel your best in one trusted clinic.",
+                callNow: "Call Now",
+                viewServices: "View Services",
+                clinicHoursTitle: "Clinic Hours",
+                hours1: "Monday - Thursday & Saturday - Sunday: 7:00 AM - 10:00 PM",
+                hours2: "Friday: 1:00 PM - 10:00 PM",
+                hours3: "Same-day consults available",
+                servicesTitle: "Our Services",
+                servicesSub: "Comprehensive care using modern technology, sterile protocols, and a patient-first approach.",
+                learnMore: "Learn More",
+                generalDentistry: "General Dentistry",
+                generalDesc: "Routine checkups, deep cleaning, and cavity care to keep your smile healthy.",
+                general1: "<strong>Tooth Cleaning:</strong> Cleans teeth using advanced products tested worldwide.",
+                general2: "<strong>Dental Fillings:</strong> Repairs cavities and protects the tooth from further decay.",
+                general3: "<strong>Oral Checkup:</strong> Early detection of gum and tooth problems before they worsen.",
+                cosmeticDentistry: "Cosmetic Dentistry",
+                cosmeticDesc: "Whitening, veneers, and smile design to improve aesthetics and confidence.",
+                cosmetic1: "<strong>Teeth Whitening:</strong> Brightens stained teeth for a cleaner, whiter smile.",
+                cosmetic2: "<strong>Veneers:</strong> Covers chipped or uneven teeth for a smooth appearance.",
+                cosmetic3: "<strong>Smile Design:</strong> Creates a custom treatment plan based on facial features.",
+                orthodontics: "Orthodontics",
+                orthoDesc: "Braces and clear aligners to align teeth and improve bite function.",
+                ortho1: "<strong>Metal Braces:</strong> Straightens teeth and corrects bite alignment over time.",
+                ortho2: "<strong>Clear Aligners:</strong> Transparent trays that gradually move teeth with comfort.",
+                ortho3: "<strong>Bite Correction:</strong> Improves chewing and jaw balance for long-term oral health.",
+                facialTreatments: "Facial Treatments",
+                facialDesc: "Hydra facial, acne programs, and rejuvenation for healthier skin.",
+                facial1: "<strong>Hydra Facial:</strong> Deep-cleans pores while hydrating and soothing the skin.",
+                facial2: "<strong>Acne Care:</strong> Controls breakouts and reduces marks with guided treatment.",
+                facial3: "<strong>Skin Rejuvenation:</strong> Improves tone, texture, and glow with clinical methods.",
+                laserProcedures: "Laser Procedures",
+                laserDesc: "Advanced laser solutions for pigmentation, scars, and hair reduction.",
+                laser1: "<strong>Pigmentation Laser:</strong> Helps fade dark spots and uneven skin tone.",
+                laser2: "<strong>Scar Reduction:</strong> Smooths acne scars and improves skin texture.",
+                laser3: "<strong>Hair Reduction:</strong> Targets hair follicles for long-term hair control.",
+                skinConsultation: "Skin Consultation",
+                consultDesc: "Personalized skin analysis and treatment planning with progress reviews.",
+                consult1: "<strong>Skin Analysis:</strong> Identifies your skin type, concerns, and treatment goals.",
+                consult2: "<strong>Routine Planning:</strong> Creates a daily care routine suited to your skin.",
+                consult3: "<strong>Progress Review:</strong> Tracks improvements and adjusts treatment as needed.",
+                galleryTitle: "Clinic Gallery",
+                gallerySub: "A quick look at our clean, modern, and patient-friendly clinic environment.",
+                aboutTitle: "Why Patients Choose Us",
+                aboutLead: "Our clinic brings dental and dermatology professionals together for efficient, complete care under one roof.",
+                aboutPoint1: "Licensed and experienced dentists and skin specialists",
+                aboutPoint2: "Strict sterilization and safety standards",
+                aboutPoint3: "Friendly team and transparent treatment plans",
+                aboutPoint4: "Comfort-first treatment rooms and modern equipment",
+                snapshotTitle: "Clinic Snapshot",
+                yearsService: "Years of Service",
+                happyPatients: "Happy Patients",
+                avgRating: "Average Rating",
+                feedbackTitle: "Patient Feedback",
+                quote1: "\"My braces and skin treatment were both handled so smoothly. The team is kind and professional.\"",
+                quote2: "\"I love the results of my whitening and acne care package. Very clean clinic and friendly staff.\"",
+                contactTitle: "Contact Us",
+                addressLine: "<strong>Address:</strong> Al Satwa, Dubai UAE",
+                phoneLine: "<strong>Phone:</strong> +971 56 423 3443",
+                emailLine: "<strong>Email:</strong> skinandsmiledentalclinic@gmail.com",
+                followUs: "<strong>Follow Us:</strong>",
+                mapTitle: "<strong>Our Location:</strong>",
+                mapHint: "Use the map below to get directions to the clinic.",
+                openMap: "Open in Google Maps",
+                mobileCall: "Call",
+                mobileInstagram: "Instagram",
+                footerText: "Skin and Smiles Dental Clinic. All rights reserved."
+            },
+            ar: {
+                pageTitle: "عيادة سكين آند سمايل للأسنان",
+                pageDescription: "تقدم عيادة سكين آند سمايل علاجات حديثة للأسنان والبشرة في عيادة واحدة موثوقة.",
+                brand: "عيادة سكين آند سمايل للأسنان",
+                navHome: "الرئيسية",
+                navServices: "الخدمات",
+                navAbout: "من نحن",
+                navContact: "اتصل بنا",
+                heroEyebrow: "العناية بالأسنان والبشرة في مكان واحد",
+                heroTitle: "بشرة صحية. ابتسامة واثقة. رعاية خبيرة في كل زيارة.",
+                heroLead: "تجمع عيادة سكين آند سمايل بين علاجات الأسنان المتقدمة والعناية الشخصية بالبشرة لتبدو وتشعر بأفضل حال في عيادة واحدة موثوقة.",
+                callNow: "اتصل الآن",
+                viewServices: "عرض الخدمات",
+                clinicHoursTitle: "ساعات العمل",
+                hours1: "من الاثنين إلى الخميس والسبت إلى الأحد: 7:00 صباحًا - 10:00 مساءً",
+                hours2: "الجمعة: 1:00 مساءً - 10:00 مساءً",
+                hours3: "مواعيد استشارة في نفس اليوم متاحة",
+                servicesTitle: "خدماتنا",
+                servicesSub: "رعاية شاملة باستخدام تقنيات حديثة ومعايير تعقيم صارمة ونهج يضع المريض أولًا.",
+                learnMore: "اعرف المزيد",
+                generalDentistry: "طب الأسنان العام",
+                generalDesc: "فحوصات دورية وتنظيف عميق وعلاج للتسوس للحفاظ على ابتسامتك صحية.",
+                general1: "<strong>تنظيف الأسنان:</strong> تنظيف الأسنان بمنتجات متطورة ومجربة عالميًا.",
+                general2: "<strong>حشوات الأسنان:</strong> إصلاح التسوس وحماية السن من التدهور لاحقًا.",
+                general3: "<strong>فحص الفم:</strong> اكتشاف مبكر لمشكلات اللثة والأسنان قبل تفاقمها.",
+                cosmeticDentistry: "تجميل الأسنان",
+                cosmeticDesc: "تبييض وقشور تجميلية وتصميم الابتسامة لتحسين المظهر والثقة.",
+                cosmetic1: "<strong>تبييض الأسنان:</strong> تفتيح الأسنان المصطبغة للحصول على ابتسامة أنظف وأكثر بياضًا.",
+                cosmetic2: "<strong>القشور التجميلية:</strong> تغطية الأسنان المتشققة أو غير المتساوية لمظهر ناعم.",
+                cosmetic3: "<strong>تصميم الابتسامة:</strong> خطة علاج مخصصة بناءً على ملامح الوجه.",
+                orthodontics: "تقويم الأسنان",
+                orthoDesc: "تقويم معدني ومصففات شفافة لمحاذاة الأسنان وتحسين الإطباق.",
+                ortho1: "<strong>التقويم المعدني:</strong> تقويم الأسنان وتصحيح الإطباق تدريجيًا.",
+                ortho2: "<strong>المصففات الشفافة:</strong> قوالب شفافة تحرك الأسنان تدريجيًا براحة.",
+                ortho3: "<strong>تصحيح العضة:</strong> تحسين المضغ وتوازن الفك لصحة فموية طويلة الأمد.",
+                facialTreatments: "علاجات الوجه",
+                facialDesc: "هيدرا فيشل وبرامج حب الشباب وتجديد البشرة لصحة وإشراقة أفضل.",
+                facial1: "<strong>هيدرا فيشل:</strong> تنظيف عميق للمسام مع ترطيب وتهدئة البشرة.",
+                facial2: "<strong>عناية حب الشباب:</strong> التحكم في البثور وتقليل الآثار بخطة علاجية موجهة.",
+                facial3: "<strong>تجديد البشرة:</strong> تحسين اللون والملمس والإشراقة بطرق سريرية.",
+                laserProcedures: "إجراءات الليزر",
+                laserDesc: "حلول ليزر متقدمة للتصبغات والندبات وتقليل الشعر.",
+                laser1: "<strong>ليزر التصبغات:</strong> يساعد على تخفيف البقع الداكنة وتوحيد لون البشرة.",
+                laser2: "<strong>تقليل الندبات:</strong> تنعيم آثار حب الشباب وتحسين ملمس البشرة.",
+                laser3: "<strong>تقليل الشعر:</strong> استهداف بصيلات الشعر للتحكم طويل الأمد.",
+                skinConsultation: "استشارة البشرة",
+                consultDesc: "تحليل مخصص للبشرة وخطة علاج مع متابعة مستمرة للتقدم.",
+                consult1: "<strong>تحليل البشرة:</strong> تحديد نوع البشرة والمشكلات والأهداف العلاجية.",
+                consult2: "<strong>خطة روتين:</strong> إعداد روتين يومي مناسب لبشرتك.",
+                consult3: "<strong>متابعة التقدم:</strong> متابعة التحسن وتعديل العلاج عند الحاجة.",
+                galleryTitle: "معرض العيادة",
+                gallerySub: "نظرة سريعة على بيئة عيادتنا النظيفة والحديثة والمريحة للمرضى.",
+                aboutTitle: "لماذا يختارنا المرضى",
+                aboutLead: "تجمع عيادتنا بين أخصائيي الأسنان والجلدية لتقديم رعاية متكاملة بكفاءة تحت سقف واحد.",
+                aboutPoint1: "أطباء أسنان وأخصائيو بشرة مرخصون وذوو خبرة",
+                aboutPoint2: "معايير صارمة للتعقيم والسلامة",
+                aboutPoint3: "فريق ودود وخطط علاج واضحة",
+                aboutPoint4: "غرف علاج مريحة ومعدات حديثة",
+                snapshotTitle: "لمحة عن العيادة",
+                yearsService: "سنوات الخدمة",
+                happyPatients: "مرضى سعداء",
+                avgRating: "متوسط التقييم",
+                feedbackTitle: "آراء المرضى",
+                quote1: "\"تم التعامل مع تقويم الأسنان وعلاج البشرة بسلاسة كبيرة. الفريق لطيف ومحترف.\"",
+                quote2: "\"أحببت نتائج التبييض وباقة علاج حب الشباب. عيادة نظيفة جدًا وطاقم ودود.\"",
+                contactTitle: "تواصل معنا",
+                addressLine: "<strong>العنوان:</strong> السطوة، دبي، الإمارات",
+                phoneLine: "<strong>الهاتف:</strong> +971 56 423 3443",
+                emailLine: "<strong>البريد الإلكتروني:</strong> skinandsmiledentalclinic@gmail.com",
+                followUs: "<strong>تابعنا:</strong>",
+                mapTitle: "<strong>موقعنا:</strong>",
+                mapHint: "استخدم الخريطة أدناه للحصول على الاتجاهات إلى العيادة.",
+                openMap: "فتح في خرائط Google",
+                mobileCall: "اتصال",
+                mobileInstagram: "إنستغرام",
+                footerText: "عيادة سكين آند سمايل للأسنان. جميع الحقوق محفوظة."
+            }
+        };
+
+        // Dropdown element in header.
+        const languageSelect = document.getElementById("languageSelect");
+
+        // Applies selected language to:
+        // 1) HTML direction (LTR/RTL)
+        // 2) Page title + meta description
+        // 3) All elements with data-i18n attribute
+        function applyLanguage(language) {
+            const selectedLanguage = translations[language] ? language : "en";
+            const dictionary = translations[selectedLanguage];
+            const root = document.documentElement;
+
+            root.lang = selectedLanguage;
+            root.dir = selectedLanguage === "ar" ? "rtl" : "ltr";
+            document.title = dictionary.pageTitle;
+            document
+                .querySelector('meta[name="description"]')
+                .setAttribute("content", dictionary.pageDescription);
+
+            // Replace on-page text for all tagged elements.
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.getAttribute("data-i18n");
+                if (dictionary[key]) {
+                    element.innerHTML = dictionary[key];
+                }
+            });
+
+            languageSelect.value = selectedLanguage;
+            localStorage.setItem("preferredLanguage", selectedLanguage);
+        }
+
+        // Keep user language choice after page refresh.
+        const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+        applyLanguage(savedLanguage);
+
+        // Listen for user changing the language dropdown.
+        languageSelect.addEventListener("change", (event) => {
+            applyLanguage(event.target.value);
+        });
+
+        // Auto-update footer year.
         document.getElementById("year").textContent = "| " + new Date().getFullYear();
     </script>
 </body>
 </html>
-
-
